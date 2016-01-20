@@ -1497,11 +1497,6 @@ Call `tabbar-tab-label-function' to obtain a label for TAB."
     (tabbar-set-template
        tabset
        (list (tabbar-line-buttons tabset)
-	     (cond
-	      (tabbar-ruler-fancy-tab-separator
-	       (propertize " " 'display (funcall (intern (format "powerline-%s-right" tabbar-ruler-fancy-tab-separator))
-						 nil (get-text-property 0 'face (car elts)) tabbar-ruler-tab-height)))
-	      (t ""))
              elts
              (propertize "%-"
                          'face (list :background padcolor
